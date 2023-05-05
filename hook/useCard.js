@@ -8,7 +8,6 @@ const useCard = () => {
   const initArray = commonNumberArray.map((number, i) => {
     return { turned: false, success: false, number };
   });
-  // return initArray;
 
   const shuffle = (array) => {
     const length = array.length;
@@ -56,11 +55,13 @@ const useCard = () => {
   };
   const [isProcessing, setIsProcessing] = useState(false);
   const [cardState, dispatch] = useReducer(cardReducer, initArray);
+  const [end, setEnd] = useState(true);
   useEffect(() => {
     dispatch({ type: "shuffle" });
   }, []);
   // const [cardState, setCardState] = useState(initArray);
   const handleShuffle = () => {
+    setEnd(false);
     dispatch({ type: "allTurn" });
     setTimeout(() => {
       dispatch({ type: "shuffle" });
@@ -71,15 +72,17 @@ const useCard = () => {
     if (isProcessing) return;
     setIsProcessing(true);
     dispatch({ type: "turned", id: id });
-    console.log(cardState[id]);
     const turnedCard = cardState.filter((card) => card.turned);
-    console.log("turnedCard", turnedCard);
-
+    if (turnedCard.length === pair * 2 - 1) {
+      setTimeout(() => {
+        setEnd(true);
+      }, 300);
+    }
     if (turnedCard.length % 2 === 1) {
       setTimeout(() => {
         judgmentCard(id);
         setIsProcessing(false);
-      }, 800);
+      }, 700);
       return;
     }
     setIsProcessing(false);
@@ -91,10 +94,9 @@ const useCard = () => {
       return;
     }
     dispatch({ type: "fail", id1: id, id2: pairCard[0].id });
-    console.log("p", pairCard);
   };
 
-  return { cardState, handleClickCard, handleShuffle };
+  return { end, cardState, handleClickCard, handleShuffle };
 };
 
 export default useCard;
