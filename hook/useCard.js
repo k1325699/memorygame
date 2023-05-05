@@ -55,7 +55,7 @@ const useCard = () => {
   };
   const [isProcessing, setIsProcessing] = useState(false);
   const [cardState, dispatch] = useReducer(cardReducer, initArray);
-  const [end, setEnd] = useState(true);
+  const [end, setEnd] = useState(false);
   useEffect(() => {
     dispatch({ type: "shuffle" });
   }, []);
