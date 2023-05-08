@@ -1,4 +1,3 @@
-import Image from "next/image";
 import useCard from "@/hook/useCard";
 import Card from "@/components/Card";
 
