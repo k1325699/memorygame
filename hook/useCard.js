@@ -53,7 +53,6 @@ const useCard = () => {
       }
     }
   };
-  // const [isProcessing, setIsProcessing] = useState(false);
   const [record, setRecord] = useState([]);
   const [cardState, dispatch] = useReducer(cardReducer, initArray);
   const [end, setEnd] = useState(false);
