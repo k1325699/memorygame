@@ -1,12 +1,7 @@
 import { imageData } from "@/data/imageData";
-import { useEffect, useState } from "react";
 
 const Card = ({ cardState, handleClick }) => {
   const { id, turned, number } = cardState;
-  // const [imageUrl, setImageUrl] = useState(null);
-  // useEffect(() => {
-  //   setImageUrl(imageData[number]);
-  // }, []);
   const imageURL = imageData[number];
   return (
     <div
