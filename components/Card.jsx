@@ -5,7 +5,7 @@ const Card = ({ cardState, handleClick }) => {
   const imageURL = imageData[number];
   return (
     <div
-      className={`card w-[14%] mx-[1%]  pb-[21%] rounded-2xl  relative  transform duration-300 ${
+      className={`card w-[23%]  md:w-[14%] mx-[1%] pb-[34.5%]  md:pb-[21%] rounded-2xl  relative  transform duration-300 ${
         turned ? "open" : ""
       }`}
       onClick={() => handleClick(id)}
