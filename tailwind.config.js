@@ -12,6 +12,15 @@ module.exports = {
         mask: "rgba(73, 73, 73, 0.805)",
         button: "#160786",
       },
+      keyframes: {
+        spin: {
+          "0%": { transform: "rotateY(0deg) rotate(30deg)" },
+          "100%": { transform: "rotateY(360deg) rotate(30deg)" },
+        },
+      },
+      animation: {
+        spin: "spin 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

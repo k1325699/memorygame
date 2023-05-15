@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
 const useResponse = () => {
+  const [loading, setLoading] = useState(true);
   const [isLandscape, setIsLandscape] = useState(false);
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
@@ -17,7 +21,7 @@ const useResponse = () => {
       };
     }
   }, []);
-  return isLandscape;
+  return { isLandscape, loading };
 };
 
 export default useResponse;
