@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useResponse = () => {
   const [loading, setLoading] = useState(true);
-  const [isLandscape, setIsLandscape] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
