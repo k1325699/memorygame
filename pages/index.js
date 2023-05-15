@@ -1,7 +1,6 @@
 import useCard from "@/hook/useCard";
 import Card from "@/components/Card";
 import End from "@/components/End";
-import { isMobile } from "react-device-detect";
 import useResponse from "@/hook/useResponse";
 
 export default function Home() {

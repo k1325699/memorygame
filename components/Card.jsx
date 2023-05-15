@@ -1,5 +1,4 @@
 import { imageData } from "@/data/imageData";
-import { isMobile } from "react-device-detect";
 
 const Card = ({ cardState, handleClick, isLandscape }) => {
   const { id, turned, number } = cardState;
